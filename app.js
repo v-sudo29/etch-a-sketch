@@ -5,8 +5,8 @@ let number = 16;
 
 // Function to create a grid of any number of squares
 function createGrid(number) {
-    height = 320 / number;
-    width = 320 / number;
+    height = 480 / number;
+    width = 480 / number;
 
     for (let i = 0; i < number * number; i++) {
         
@@ -32,10 +32,10 @@ const button = document.querySelector('button');
 
 button.addEventListener('click', () => {
 
-    // Prompt user to give an acceptable number
+    // Prompt user to give an acceptable
     do {
         number = prompt('Number');
-    } while (number <= 2 || number > 16);
+    } while (number < 2 || number > 64);
 
     // Remove existing grid
     let currentGrids = document.querySelectorAll('.grid');

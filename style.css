@@ -19,8 +19,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    max-width: 320px;
-    max-height: 320px;
+    max-width: 480px;
+    max-height: 480px;
 }
 
 #grid {
