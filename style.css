@@ -1,15 +1,31 @@
-/** Style Grid Container **/
-.container {
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/** Style Body **/
+body {
     display: flex;
-    border: 2px solid red;
-    min-height: 50vh;
-    min-width: 50vw;
-    align-content: flex-start;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    flex: 1 1 auto;
+    display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
+    max-width: 320px;
+    max-height: 320px;
 }
 
 #grid {
-    border: 2px solid black;
-    height: 10px;
-    width: 10px;
+    flex: 1 1 auto;
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
 }
