@@ -1,4 +1,13 @@
 /** Style Grid Container **/
 .container {
     display: flex;
+    border: 2px solid red;
+    min-height: 50vh;
+    min-width: 50vw;
+}
+
+#grid {
+    border: 2px solid black;
+    height: 10px;
+    width: 10px;
 }
