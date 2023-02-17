@@ -21,6 +21,7 @@ function createGrid(number) {
         div.style.border = '1px solid black';
     }
 }
+
 // Function resets grids to white background
 function reset() {
     let currentGrids = document.querySelectorAll('.grid');

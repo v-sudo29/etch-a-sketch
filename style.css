@@ -22,7 +22,3 @@ body {
     max-width: 480px;
     max-height: 480px;
 }
-
-#grid {
-    flex: 1 1 auto;
-}
