@@ -1,6 +1,5 @@
 // Create 16x16 grid of square divs
 const container = document.querySelector('.container');
-
 let number = 16;
 
 // Function to create a grid of any number of squares
@@ -22,13 +21,16 @@ function createGrid(number) {
         div.style.border = '1px solid black';
     }
 }
+// Function resets grids to white background
+function reset() {
+    let currentGrids = document.querySelectorAll('.grid');
+    currentGrids.forEach((grid) => {
+        grid.style.backgroundColor = 'white';
+    });
+}
 
-// Create default grid
-let defaultGrid = createGrid(number);
-
-// Button event
+// BUTTON: Set Size
 const button = document.querySelector('button');
-
 button.addEventListener('click', () => {
 
     // Prompt user to give an acceptable number
@@ -51,6 +53,13 @@ button.addEventListener('click', () => {
          });
     });
 });
+
+// BUTTON: Reset
+const resetButton = document.querySelector('.reset');
+resetButton.addEventListener('click', reset);
+
+// Create default grid
+let defaultGrid = createGrid(number);
 
 // DEFAULT: Use .forEach to iterate over each grid square
 let grids = document.querySelectorAll('.grid');
