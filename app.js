@@ -10,7 +10,6 @@ function createGrid(number) {
 
     for (let i = 0; i < number * number; i++) {
         
-
         // Create a grid square and append to container
         let div = document.createElement('div');
         div.setAttribute('class', 'grid');
@@ -32,7 +31,7 @@ const button = document.querySelector('button');
 
 button.addEventListener('click', () => {
 
-    // Prompt user to give an acceptable
+    // Prompt user to give an acceptable number
     do {
         number = prompt('Number');
     } while (number < 2 || number > 64);
