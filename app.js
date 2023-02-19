@@ -1,7 +1,7 @@
 // Global variables
 const container = document.querySelector('.container');
 const DEFAULT_NUMBER = 16;
-let number = 16;
+let number = DEFAULT_NUMBER;
 
 // Function to create a grid of any number of squares
 function createGrid(number) {
@@ -13,7 +13,6 @@ function createGrid(number) {
         // Create a grid square and append to container
         let div = document.createElement('div');
         div.setAttribute('class', 'grid');
-        
         container.appendChild(div);
     
         // Style square grid
@@ -31,6 +30,13 @@ function reset() {
     });
 }
 
+// Function that colors grids black
+function defaultColor(grid) {
+    grid.addEventListener('mouseover', () => {
+        grid.style.backgroundColor = 'black';
+     });
+}
+
 // BUTTON: Set Size
 const setButton = document.querySelector('.set');
 setButton.addEventListener('click', () => {
@@ -42,18 +48,12 @@ setButton.addEventListener('click', () => {
 
     // Remove existing grid
     let currentGrids = document.querySelectorAll('.grid');
-    currentGrids.forEach((grid) => {
-        grid.remove();
-    });
+    currentGrids.forEach((grid) => grid.remove());
 
     // Add new grid
     createGrid(number);
     currentGrids = document.querySelectorAll('.grid');
-    currentGrids.forEach((grid) => {
-        grid.addEventListener('mouseover', () => {
-            grid.style.backgroundColor = 'black';
-         });
-    });
+    currentGrids.forEach((grid) => defaultColor(grid));
 });
 
 // BUTTON: Reset
@@ -65,9 +65,4 @@ let defaultGrid = createGrid(number);
 
 // DEFAULT: Use .forEach to iterate over each grid square
 let grids = document.querySelectorAll('.grid');
-
-grids.forEach((grid) => {
-    grid.addEventListener('mouseover', () => {
-       grid.style.backgroundColor = 'black';
-    });
-});
+grids.forEach((grid) => defaultColor(grid));
