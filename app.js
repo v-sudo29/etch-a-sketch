@@ -1,5 +1,6 @@
-// Create 16x16 grid of square divs
+// Global variables
 const container = document.querySelector('.container');
+const DEFAULT_NUMBER = 16;
 let number = 16;
 
 // Function to create a grid of any number of squares
@@ -31,8 +32,8 @@ function reset() {
 }
 
 // BUTTON: Set Size
-const button = document.querySelector('button');
-button.addEventListener('click', () => {
+const setButton = document.querySelector('.set');
+setButton.addEventListener('click', () => {
 
     // Prompt user to give an acceptable number
     do {
