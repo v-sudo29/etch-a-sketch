@@ -36,7 +36,7 @@ button.addEventListener('click', () => {
 
     // Prompt user to give an acceptable number
     do {
-        number = prompt('Number');
+        number = prompt('Choose a number from 2-64');
     } while (number < 2 || number > 64);
 
     // Remove existing grid
