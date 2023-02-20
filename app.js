@@ -46,13 +46,6 @@ function changeColor(e) {
     e.target.style.backgroundColor = 'black';
 }
 
-// Function that colors grids black
-function defaultColor(grid) {
-    grid.addEventListener('mouseover', () => {
-        grid.style.backgroundColor = 'black';
-     });
-}
-
 // BUTTON: Set Size
 const setButton = document.querySelector('.set');
 setButton.addEventListener('click', () => {
