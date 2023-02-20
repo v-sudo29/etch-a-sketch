@@ -9,11 +9,25 @@ html {
 /** Style Body **/
 body {
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin: auto;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
 }
 
 .container {
@@ -24,10 +38,4 @@ body {
     max-height: 480px;
     min-width: 480px;
     min-width: 480px;
-}
-
-.buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
 }
