@@ -3,6 +3,10 @@ const container = document.querySelector('.container');
 const DEFAULT_NUMBER = 16;
 let number = DEFAULT_NUMBER;
 
+let mouseDown = false;
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false); 
+
 // Function to create a grid of any number of squares
 function createGrid(number) {
     height = 480 / number;
@@ -14,6 +18,10 @@ function createGrid(number) {
         let div = document.createElement('div');
         div.setAttribute('class', 'grid');
         container.appendChild(div);
+
+        // Add event listeners to change grid color
+        div.addEventListener('mouseover', changeColor);
+        div.addEventListener('mousedown', changeColor);
     
         // Style square grid
         div.style.height = height + 'px';
@@ -28,6 +36,14 @@ function reset() {
     currentGrids.forEach((grid) => {
         grid.style.backgroundColor = 'white';
     });
+}
+
+// Function that changes grid color when user 'drags' mouse
+function changeColor(e) {
+    if (e.type === 'mouseover' && !mouseDown) {
+        return;
+    }
+    e.target.style.backgroundColor = 'black';
 }
 
 // Function that colors grids black
@@ -52,8 +68,6 @@ setButton.addEventListener('click', () => {
 
     // Add new grid
     createGrid(number);
-    currentGrids = document.querySelectorAll('.grid');
-    currentGrids.forEach((grid) => defaultColor(grid));
 });
 
 // BUTTON: Reset
@@ -62,7 +76,3 @@ resetButton.addEventListener('click', reset);
 
 // Create default grid
 let defaultGrid = createGrid(number);
-
-// DEFAULT: Use .forEach to iterate over each grid square
-let grids = document.querySelectorAll('.grid');
-grids.forEach((grid) => defaultColor(grid));
