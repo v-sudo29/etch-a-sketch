@@ -12,15 +12,22 @@ body {
     min-height: 100vh;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+    margin: auto;
 }
 
 .container {
     flex: 1 1 auto;
     display: flex;
     flex-wrap: wrap;
-    align-content: flex-start;
     max-width: 480px;
     max-height: 480px;
     min-width: 480px;
     min-width: 480px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
